@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Vendup</title>
+        <title>URClients</title>
       </Head>
       
         <ApolloProvider client={client}>
