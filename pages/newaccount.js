@@ -4,6 +4,8 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import {useMutation, gql} from '@apollo/client'
 import {useRouter} from 'next/router'
+import Link from 'next/link'
+
 
 const NEW_ACCOUNT = gql`
     mutation newUser($input: UserInput) {
@@ -59,7 +61,7 @@ const NewAccount = () => {
                 saveMessage(`The user was created successfully: ${data.newUser.name}`)
                 setTimeout(() => {
                     saveMessage(null)
-                    router.push('/login')
+                    router.push('/')
                 }, 3000);
 
             } catch (error) {
@@ -178,6 +180,9 @@ const NewAccount = () => {
                             className='bg-green-800 w-full mt-5 p-2 text-white uppercase hover:bg-green-900'
                             value='Create Account'
                         /> 
+                        <Link href="/">
+                            <a className='bg-green-800 py-2 px-3 mt-5 inline-block text-white  hover:bg-green-900 mb-3 uppercase w-full text-center'>I have an account</a>
+                        </Link>
                     </form>
                 </div>
             </div>
