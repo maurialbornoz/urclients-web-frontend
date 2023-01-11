@@ -20,8 +20,9 @@ const Header = () => {
     const router = useRouter()
 
     if(loading) return 'Loading...'
-    
-    if(data.getUser === null){
+    console.log(data)
+    if(data.getUser === null || !localStorage.getItem('token')){
+        
         router.push('/')
         return null
     }
